@@ -2,7 +2,7 @@ import React from 'react';
 
 export const Footer = () => {
   const vdom = (
-    <footer className="pb-5 bg-light">
+    <footer className="mt-auto pb-5 bg-light">
       <div className="container-xl">
         <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 pt-3">
           <div className="col d-flex flex-column mb-2">
