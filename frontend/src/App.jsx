@@ -1,5 +1,5 @@
 import React from 'react';
-import { Editor } from './features';
+import { Editor, Footer } from './features';
 
 export const App = () => (
   <div className="d-flex flex-column min-vh-100">
@@ -16,10 +16,6 @@ export const App = () => (
         </div>
       </div>
     </main>
-    <footer className="footer pb-5 mt-auto">
-      <div className="container">
-        footer
-      </div>
-    </footer>
+    <Footer />
   </div>
 );
