@@ -6,7 +6,9 @@ import { Provider } from 'react-redux';
 import { rootReducer } from './reducers';
 import { App } from './App';
 
+import 'xterm/css/xterm.css';
 import './index.css';
+
 
 const store = configureStore({
   reducer: rootReducer,

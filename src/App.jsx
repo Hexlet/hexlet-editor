@@ -1,5 +1,6 @@
 import React from 'react';
 import { Editor } from './features';
+import Terminal from './components/Terminal/Terminal.jsx';
 
 export const App = () => (
   <div className="d-flex flex-column min-vh-100">
@@ -12,7 +13,7 @@ export const App = () => (
           <Editor />
         </div>
         <div className="col-6">
-          output
+          <Terminal />
         </div>
       </div>
     </main>
