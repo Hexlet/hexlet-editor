@@ -69,7 +69,7 @@ module.exports = {
     //   { from: './public/logo192.png', to: './logo192.png' },
     // ]),
     new MonacoWebpackPlugin({
-      languages: ['javascript'],
+      languages: ['javascript', 'php', 'python'],
     }),
   ],
   optimization: {
