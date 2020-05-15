@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
-const defaultLanguage = { value: 'javascript', label: 'javascript' };
+const defaultLanguage = { value: 'javascript' };
 
 const slice = createSlice({
   name: 'editor',

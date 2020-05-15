@@ -17,7 +17,7 @@ export const useEditor = () => {
 
   const onMount = (editor, monaco) => {
     const monacoLanguges = monaco.languages.getLanguages();
-    const newLanguages = monacoLanguges.map(({ id }) => ({ value: id, label: id }));
+    const newLanguages = monacoLanguges.map(({ id }) => ({ value: id }));
     dispatch(setLanguages(newLanguages));
 
     window.addEventListener('resize', () => {

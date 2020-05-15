@@ -9,10 +9,12 @@ export const SelectLanguage = () => {
     onChangeLanguage(value);
   };
 
+  const getOptionLabel = ({ value }) => value;
+
   const vdom = (
     <div className="d-flex flex-column justify-center align-items-center">
       <h5 className="font-italic font-weight-lighter">Choose language</h5>
-      <Select className="mb-3 w-100" onChange={onChange} value={language} options={languages} />
+      <Select className="mb-3 w-100" getOptionLabel={getOptionLabel} onChange={onChange} value={language} options={languages} />
     </div>
   );
 
