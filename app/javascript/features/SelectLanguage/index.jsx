@@ -10,7 +10,10 @@ export const SelectLanguage = () => {
   };
 
   const vdom = (
-    <Select className="mb-3" onChange={onChange} value={language} options={languages} />
+    <div className="d-flex flex-column justify-center align-items-center">
+      <h5 className="font-italic font-weight-lighter">Choose language</h5>
+      <Select className="mb-3 w-100" onChange={onChange} value={language} options={languages} />
+    </div>
   );
 
   return vdom;
