@@ -8,8 +8,8 @@ export const Editor = () => {
     code,
     onChange,
     editorDidMount,
+    language,
   } = useEditor();
-
 
   const options = {
     selectOnLineNumbers: true,
@@ -18,7 +18,7 @@ export const Editor = () => {
   return (
     <MonacoEditor
       height="600"
-      language="javascript"
+      language={language.value}
       theme="vs-dark"
       value={code}
       options={options}

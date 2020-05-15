@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { updateCode } from './editorSlice.js';
+import { updateCode, changeLanguage, setLanguages } from './editorSlice.js';
 
 export const useEditor = () => {
   const dispatch = useDispatch();
@@ -9,9 +9,17 @@ export const useEditor = () => {
     dispatch(updateCode(code));
   };
 
-  const code = useSelector((state) => state.editor.code);
+  const onChangeLanguage = (language) => {
+    dispatch(changeLanguage(language));
+  };
 
-  const onMount = (editor) => {
+  const { code, language, languages } = useSelector((state) => state.editor);
+
+  const onMount = (editor, monaco) => {
+    const monacoLanguges = monaco.languages.getLanguages();
+    const newLanguages = monacoLanguges.map(({ id }) => ({ value: id, label: id }));
+    dispatch(setLanguages(newLanguages));
+
     window.addEventListener('resize', () => {
       if (editor) {
         editor.layout();
@@ -22,7 +30,10 @@ export const useEditor = () => {
 
   return {
     code,
+    language,
+    languages,
     onChange,
+    onChangeLanguage,
     editorDidMount: onMount,
   };
 };

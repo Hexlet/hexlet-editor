@@ -1,9 +1,10 @@
 import React from 'react';
-import { Editor } from './features';
+import { Editor, SelectLanguage } from './features';
 
 export const App = () => (
   <div>
     <main className="container-fluid my-5">
+      <SelectLanguage />
       <div className="row">
         <div className="col-6">
           <Editor />
