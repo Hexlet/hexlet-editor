@@ -18,7 +18,7 @@ export const Editor = () => {
   return (
     <MonacoEditor
       height="600"
-      language={language.value}
+      language={language}
       theme="vs-dark"
       value={code}
       options={options}
