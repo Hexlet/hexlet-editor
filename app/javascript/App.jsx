@@ -1,11 +1,17 @@
 import React from 'react';
-import { Editor, Terminal, Button } from './components';
+import {
+  Editor, Terminal, Button, EditorToolbar,
+} from './components';
+
 
 export const App = () => (
   <main className="container-fluid my-5">
     <div className="row">
       <div className="col-6">
-        <Editor />
+        <div className="card">
+          <Editor />
+          <EditorToolbar />
+        </div>
         <Button />
       </div>
       <div className="col-6">

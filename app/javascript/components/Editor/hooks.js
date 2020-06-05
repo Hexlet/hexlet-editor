@@ -8,9 +8,10 @@ export const useEditor = () => {
     dispatch(actions.updateCode(code));
   };
 
-  const { code, language } = useSelector((state) => ({
+  const { code, language, options } = useSelector((state) => ({
     code: state.editor.code,
     language: state.editor.language,
+    options: state.editor.options,
   }));
 
   const onMount = (editor) => {
@@ -22,10 +23,12 @@ export const useEditor = () => {
     editor.focus();
   };
 
+
   return {
     code,
     language,
     onChange,
     editorDidMount: onMount,
+    options,
   };
 };

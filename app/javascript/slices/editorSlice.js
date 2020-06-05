@@ -2,12 +2,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const slice = createSlice({
-  name: 'editor',
+  name: 'editorToolbar',
   initialState: {
     error: false,
     isFetching: false,
     language: 'javascript',
     code: '// happy hacking!\n',
+    options: {
+      selectOnLineNumbers: true,
+      tabSize: 8,
+    },
   },
   reducers: {
     updateCode(state, { payload }) {
@@ -15,6 +19,10 @@ const slice = createSlice({
     },
     changeLanguage(state, { payload }) {
       state.language = payload;
+    },
+    setTabSize(state, { payload }) {
+      state.options.tabSize = payload;
+      state.options.selectOnLineNumbers = !state.options.selectOnLineNumbers;
     },
   },
 });
