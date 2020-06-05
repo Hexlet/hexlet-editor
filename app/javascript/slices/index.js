@@ -9,7 +9,8 @@ export const rootReducer = combineReducers({
 });
 
 export const setupState = (gon) => (dispatch) => {
-  dispatch(editorActions.changeLanguage(gon.language));
+  // FIXME: гон сейчас пустой, поэтому фолбек на джаваскрипт
+  dispatch(editorActions.changeLanguage(gon.language || 'javascript'));
 };
 
 export const actions = {

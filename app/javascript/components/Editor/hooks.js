@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { actions } from '../../slices';
 
+
 export const useEditor = () => {
   const dispatch = useDispatch();
 
@@ -21,7 +22,16 @@ export const useEditor = () => {
       }
     });
     editor.focus();
+    // eslint-disable-next-line no-bitwise
+    editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+      const code = editor.getValue();
+      dispatch(actions.runCode(code));
+    });
   };
+  const { code, language } = useSelector((state) => ({
+    code: state.editor.code,
+    language: state.editor.language,
+  }));
 
 
   return {

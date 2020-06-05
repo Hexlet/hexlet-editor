@@ -8,6 +8,8 @@ This repository is created and maintained by the team and the community of Hexle
 
 ## Installation
 
+node >= 12
+
 ```bash
 $ make install
 ```
