@@ -2,15 +2,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const slice = createSlice({
-  name: 'editorToolbar',
+  name: 'editor',
   initialState: {
     error: false,
     isFetching: false,
     language: 'javascript',
     code: '// happy hacking!\n',
     options: {
-      selectOnLineNumbers: true,
-      tabSize: 8,
+      insertSpaces: true,
+      tabSize: 4,
     },
   },
   reducers: {
@@ -22,7 +22,9 @@ const slice = createSlice({
     },
     setTabSize(state, { payload }) {
       state.options.tabSize = payload;
-      state.options.selectOnLineNumbers = !state.options.selectOnLineNumbers;
+    },
+    setInsertSpaces(state) {
+      state.options.insertSpaces = !state.options.insertSpaces;
     },
   },
 });

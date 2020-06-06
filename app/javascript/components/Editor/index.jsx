@@ -11,14 +11,17 @@ export const Editor = () => {
     onChange,
     editorDidMount,
     options,
-  } = useEditor();
+  } = useEditor(monaco);
+
   useMemo(() => {
     if (monaco.current) {
       monaco.current.editor.getModel().updateOptions(options);
-      console.log('Editor -> updateOptions', monaco.current.editor.getModel().getOptions());
     }
   }, [options]);
 
+  const constructorOptions = {
+    selectOnLineNumbers: true,
+  };
 
   return (
     <MonacoEditor
@@ -26,7 +29,7 @@ export const Editor = () => {
       language={language}
       theme="vs-dark"
       value={code}
-      options={options}
+      options={constructorOptions}
       onChange={onChange}
       editorDidMount={editorDidMount}
       ref={monaco}

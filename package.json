@@ -20,6 +20,7 @@
     "express-ws": "^4.0.0",
     "faker": "^4.1.0",
     "fastify-webpack-hmr": "^2.2.0",
+    "lodash": "^4.17.15",
     "monaco-editor": "^0.20.0",
     "node-pty": "^0.9.0",
     "prop-types": "^15.7.2",

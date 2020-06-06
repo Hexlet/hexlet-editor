@@ -13,11 +13,8 @@ export const App = () => (
     </div>
     <div className="row">
       <div className="col-6">
-        <div className="card">
-          <Editor />
-          <EditorToolbar />
-        </div>
-        <Button />
+        <Editor />
+        <EditorToolbar />
       </div>
       <div className="col-6">
         <Terminal />

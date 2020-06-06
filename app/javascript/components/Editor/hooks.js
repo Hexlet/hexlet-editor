@@ -9,13 +9,7 @@ export const useEditor = () => {
     dispatch(actions.updateCode(code));
   };
 
-  const { code, language, options } = useSelector((state) => ({
-    code: state.editor.code,
-    language: state.editor.language,
-    options: state.editor.options,
-  }));
-
-  const onMount = (editor) => {
+  const onMount = (editor, monaco) => {
     window.addEventListener('resize', () => {
       if (editor) {
         editor.layout();
@@ -28,11 +22,12 @@ export const useEditor = () => {
       dispatch(actions.runCode(code));
     });
   };
-  const { code, language } = useSelector((state) => ({
+
+  const { code, language, options } = useSelector((state) => ({
     code: state.editor.code,
     language: state.editor.language,
+    options: state.editor.options,
   }));
-
 
   return {
     code,
