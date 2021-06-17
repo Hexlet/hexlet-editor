@@ -2,5 +2,5 @@
 
 test('/', async () => {
   const response = await get('/');
-  expect(response).toMatchObject({ statusCode: 200 });
+  expect(response).toMatchObject({ statusCode: 302 });
 });
